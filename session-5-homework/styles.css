@@ -1,0 +1,80 @@
+/* Базовые стили */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #e8f5e9;
+}
+
+h1 {
+    font-family: 'Press Start 2P', cursive; /* Игровой шрифт */
+    font-size: 20px;
+    text-align: center;
+    padding: 40px 0;
+}
+
+/* 1. Навигация через Flexbox */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2e7d32;
+    color: white;
+    padding: 10px 50px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+/* 2. Основной контент (Flexbox Grid) */
+.flex-container {
+    display: flex;
+    flex-wrap: wrap; /* Позволяет карточкам переноситься */
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Карточки */
+.card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px); /* Анимация при наведении */
+}
+
+.card img {
+    max-width: 100%; /* Адаптивность картинки */
+    height: auto;
+    border-radius: 5px;
+}
+
+/* 3. Media Query (Адаптивность для телефонов) */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column; /* Навигация становится вертикальной */
+        padding: 20px;
+    }
+    
+    .nav-links {
+        padding: 0;
+        margin-top: 15px;
+    }
+
+    .card {
+        width: 100%; /* Карточки растягиваются на весь экран */
+    }
+}
